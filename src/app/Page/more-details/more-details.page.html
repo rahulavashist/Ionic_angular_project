@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon name="arrow-back" routerLink="/home"></ion-icon>
+    <ion-title>Product Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="product">
+    <h2>Product Name: {{ product.title }} <br> Rating : {{product.rating}}</h2>
+    <h2>  Discount : {{product.discountPercentage}} %</h2>
+    <h2>Price : $ {{product.price}}</h2>
+<h3> Stock left :{{product.stock}}</h3>
+<h3>Brand : {{product.brand}}</h3>
+<h3>Category : {{product.category}}</h3>
+<h4>Description : {{product.description}}</h4>
+   <img src="{{product.images[0]}}" alt="">
+   <br>
+   <img src="{{product.images[1]}}" alt="">
+   <br>
+   <img src="{{product.images[2]}}" alt="">
+   <br>
+   <img src="{{product.images[3]}}" alt="">
+   <br>
+   <img src="{{product.images[4]}}" alt="">
+<br>
+
+  </div>
+</ion-content>
+
+
+
+
