@@ -15,5 +15,5 @@ export interface ProductResponse {
     brand: string;
     category: string;
     thumbnail: string;
-    images: string[];
+    images:string[];
   }

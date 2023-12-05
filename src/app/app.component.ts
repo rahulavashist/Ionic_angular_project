@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductService } from './product.service';
+import { ProductService } from './Services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,6 @@ export class AppComponent {
  
 
   constructor(private api :ProductService){
-    this.getData()
-  }
-  getData(){
-
     this.api.getAllItems()
-    
-}
-
+  }
 }

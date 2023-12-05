@@ -33,8 +33,7 @@ img{
 
 ion-card{
   border-radius: 20px;
-  height: 40.5rem;
-//  border: solid 2px rgb(255, 255, 255);
+  height: 41.5rem;
  text-align: center;
  padding: 1rem;
  box-shadow: 0px 3px 18px 2px rgba(111, 111, 111, 0.59);
@@ -43,18 +42,35 @@ ion-card{
 }
 
 button{
-  text-align: center;
   border: none;
-  background-color: transparent;
+background-color: transparent;
   color: rgb(57, 57, 201);
 font-size: larger;
-
 margin-top: 4rem;
-
+margin-bottom: 1rem;
 }
-// button:active{
-//  color: rgb(124, 194, 255);
-// }
-// button:hover{
-//   color: rgb(124, 194, 255);;
-// }
+
+.add{
+  color: cornflowerblue;
+  padding-bottom: 1rem;
+  margin: auto;
+  position: absolute;
+  left: 35%;
+}
+.delete{
+  margin: 0%;
+  float: right;
+  color: #fff;
+  font-size: xx-large;
+  margin-bottom: 0.5rem;
+}
+ion-toolbar{
+  padding: 0.5rem;
+}
+.update{
+  margin: 0%;
+  float: left;
+  color: #fff;
+  font-size: xx-large;
+  margin-bottom: 0.5rem;
+}

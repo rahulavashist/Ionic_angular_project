@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { makeAutoObservable } from 'mobx';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from '../product.service';
+import { ProductService } from '../Services/product.service';
 
 @Injectable({
   providedIn: 'root'

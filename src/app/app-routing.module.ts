@@ -12,6 +12,18 @@ const routes: Routes = [
     loadChildren: () => import('./Page/more-details/more-details.module').then( m => m.MoreDetailsPageModule)
   },
   {
+    path: 'addProduct',
+    loadChildren: () => import('./Page/add-product/add-product.module').then( m => m.AddProductPageModule)
+  },
+  {
+    path: 'updateProduct',
+    loadChildren: () => import('./Page/update-product/update-product.module').then( m => m.UpdateProductPageModule)
+  },
+  {
+    path: 'deleteProduct',
+    loadChildren: () => import('./Page/delete-product/delete-product.module').then( m => m.DeleteProductPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./Page/pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
   },

@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon name="arrow-back" routerLink="/home"></ion-icon>
+    <ion-title>addProduct</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+
+   <form #f="ngForm" (ngSubmit)="addProduct()">
+    <ion-item>
+      <ion-input [(ngModel)]="product.title"  name="Title"  minlength="5"
+      maxlength="50" required placeholder="Enter Title :">
+    </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="product.description" minlength="10" required name="description" placeholder="Description :"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="product.price"  type="number" required placeholder="Price $:" name="price" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="product.discountPercentage" required type="number" name="price" placeholder="Discount Percentage :"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="product.rating" type="number" required name="price" placeholder="Rating"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="product.stock"  type="number" required name="price" placeholder="Stock"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="product.category"  name="price" required placeholder="Category :"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="product.brand"  name="price" required placeholder="Brand :"></ion-input>
+    </ion-item>
+
+    <h4>Thumbnail</h4>
+    <ion-input type="file" id="img" name="img" required (change)="onThumbnailChange($event)"></ion-input>
+
+<h4>Images</h4>
+<ion-list>
+  <ion-input type="file"  id="file" name="file" (change)="onFileChange($event)"></ion-input>
+  <ion-input type="file"  id="file" name="file" (change)="onFileChange($event)"></ion-input>
+  <ion-input type="file"  id="file" name="file" (change)="onFileChange($event)"></ion-input>
+  <ion-input type="file"  id="file" name="file" (change)="onFileChange($event)"></ion-input>
+ 
+</ion-list>
+<div *ngFor="let imageUrl of product.images">
+  <img [src]="imageUrl" alt="Selected Image">
+</div>
+
+<br>  
+      <ion-button type="submit" class="button" [disabled]="f.invalid"> Add Product</ion-button>
+   </form>
+  
+</ion-content>
+

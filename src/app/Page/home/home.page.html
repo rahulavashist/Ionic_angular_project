@@ -1,10 +1,3 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Product List
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
 <ion-header>
   <ion-toolbar>
     <ion-title>
@@ -12,35 +5,40 @@
     </ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar placeholder="Search Products" (input)="searchProduct($event)"></ion-searchbar>
+    <ion-searchbar placeholder="Search Products" [(ngModel)]="searchQuery"
+      (ionChange)="searchProduct($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
-
+<ion-toolbar>
+  <button class="add" [routerLink]=" '/addProduct'"><ion-icon name="add"></ion-icon>Add Product</button>
+</ion-toolbar>
 <ion-content>
-  
+
   <ion-list *ngIf="products">
     <ion-list *ngFor="let product of products">
+      <button class="update" [routerLink]="'/updateProduct'" (click)="updateProduct(product.id)">
+        <ion-icon name="create"></ion-icon>
+      </button>
+      <button class="delete" (click)="deleteProduct(product.id)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
       <ion-card>
+
         <img src="{{product.thumbnail}}" alt="">
         <br>
-       <ion-text >Product Name : {{ product.title }} </ion-text>
-      <br>
-      Price $ : {{ product.price }}
-      <br>
-       Rating :{{product.rating}}
-      <br>
-      Description : {{ product.description }}
-      <br>
-      <button [routerLink]="'/moreDetails/' + product.id">More Details</button>
-    </ion-card>
- 
-  </ion-list>
-  <ion-infinite-scroll (ionInfinite)="loadData($any($event))">
-    <ion-infinite-scroll-content loadingText="Loading more items..."></ion-infinite-scroll-content>
-  </ion-infinite-scroll> 
-
+        <ion-text>Product Name : {{ product.title }} </ion-text>
+        <br>
+        Price $ : {{ product.price }}
+        <br>
+        Rating :{{product.rating}}
+        <br>
+        Description : {{ product.description }}
+        <br>
+        <button [routerLink]="'/moreDetails/' + product.id">More Details</button>
+      </ion-card>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="loadData($any($event))">
+      <ion-infinite-scroll-content loadingText="Loading more items..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </ion-list>
 </ion-content>
-
-
-
